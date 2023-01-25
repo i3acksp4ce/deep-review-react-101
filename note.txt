@@ -1,0 +1,13 @@
+pure component = memo
+
+props ที่ผ่าน memo ควร cache ด้วย useCallback หรือ useMemo
+เพื่อไม่ให้ rerender
+
+ปกติ react เวลา render component จะทำงานใหม่หมดจากบนลงล่าง
+และ ประมวลผลแต่ละอย่างใหม่ตลอด
+แต่ถ้าใช้ useCallback หรือ useMemo จะ cache ค่าของมันไว้
+โดยขึ้นอยู่กับ dependencies ที่เราใส่
+
+
+useDeferredValue
+เก็บค่ารอไว้ชั่วคราว แล้วค่อยเปลี่ยนแปลงทีเดียว
