@@ -10,4 +10,32 @@ props ที่ผ่าน memo ควร cache ด้วย useCallback หร
 
 
 useDeferredValue
-เก็บค่ารอไว้ชั่วคราว แล้วค่อยเปลี่ยนแปลงทีเดียว
+ปกติเวลาค่าเปลี่ยน child จะ re-render ด้วย
+defer เก็บค่ารอไว้ชั่วคราว แล้วค่อยเปลี่ยนแปลงทีเดียว
+react จัดการให้เอง ไม่ต้องตั้งเวลา ไว้ทำ optimize re-render
+ไม่เกิด ui-blocking เมื่อเทียบกับ debouncing หรือ throttle
+เพราะไป re-render ใน background ก่อน
+
+
+useId
+ไว้ gen unique id ใช้กับ component เพื่อใช้กับ html element ที่มี accessibility attribute
+เช่น aria-labelledby หรือ aria-describedby
+เพิ่ม ux
+ใช้แทนการ hardcode
+ช่วยให้ค่าอยู่ระหว่าง ssr กับ csr เหมือนกัน
+
+
+useImperativeHandle
+คือ expose
+ใช้เพื่อให้ parent สามารถเรียกใช้ method ของ child ได้
+ใช้คู่กับ ref ของ child
+
+useLayoutEffect
+รันก่อน browser paint
+รันแค่ฝั่ง client
+ใช้เท่าที่จำเป็นเพราะทำให้เกิด ui blocking
+
+
+useReducer
+ลดโค้ด logic ที่ต้องเขียนซ้ำ ๆ
+แยกโค้ดซับซ้อน แยกออกมาเป็น pure function เพื่อ readable

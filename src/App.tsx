@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 // import './App.css'
 import { ClassComponent } from './components/ClassComponent'
+import { ContextWrapper } from './components/context/ContextWrapper'
+import { Expose } from './components/expose/Expose'
+import { Reducer } from './components/reducer/Reducer'
+import { Inputs } from './components/unique-id/Inputs'
 import { Wrapper } from './components/Wrapper'
 
 function App() {
@@ -31,6 +35,10 @@ function App() {
         <div>
           {/* <ClassComponent /> */}
           <Wrapper />
+          <Inputs />
+          <Expose />
+          <Reducer />
+          <ContextWrapper />
         </div>
       </div>
     </>
