@@ -4,5 +4,14 @@ module.exports = {
   theme: {
     extend: {},
   },
+  corePlugins: {
+    textOpacity: false,
+    backgroundOpacity: false,
+    borderOpacity: false,
+    ringOpacity: false,
+    divideOpacity: false,
+    placeholderOpacity: false,
+    backdropOpacity: false,
+  },
   plugins: [],
 }
